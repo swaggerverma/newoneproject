@@ -9,14 +9,14 @@ const useGetCourseDetails = (id) => {
     }, [])
 
     const getCourseDetails = async (id) => {
-        // console.log("get course details called with id ", id)
+        console.log("get course details called with id ", id)
         const docRef = doc(db, "Courses", id);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             // console.log("Document data:", docSnap.data());
             setCourseDetails(docSnap.data())
         } else {
-            // console.log("No such document!");
+            console.log("No such document!");
         }
     }
     return courseDetails
